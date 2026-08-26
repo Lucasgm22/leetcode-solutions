@@ -56,6 +56,8 @@
  * 	• 1 <= s.length <= 10^4
  *
  * 	• s consists of parentheses only '()[]{}'.
+ *
+ * O(|s|) in space and time
 */
 import java.util.Deque;
 import java.util.ArrayDeque;

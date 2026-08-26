@@ -43,6 +43,9 @@
  * 	• 1 <= s.length <= 2 * 10^5
  *
  * 	• s consists only of printable ASCII characters.
+ *
+ * O(|s|) in time
+ * O(1) in space
 */
 
 class Solution {

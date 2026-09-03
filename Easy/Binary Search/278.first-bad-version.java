@@ -58,6 +58,6 @@ public class Solution extends VersionControl {
             else if (!isBadVersion(mid)) left = mid + 1;
             else right = mid - 1;
         }
-        throw new IllegalStateException("No bad version found!");
+        throw new IllegalArgumentException("No bad version found!");
     }
 }

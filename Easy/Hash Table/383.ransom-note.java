@@ -36,7 +36,7 @@
  *
  * 	• ransomNote and magazine consist of lowercase English letters.
  *
- * 	O(|ransomNote| + |magazine|) in time
+ * 	O(|magazine|) in time
  * 	O(1) in space
 */
 

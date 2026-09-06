@@ -47,12 +47,9 @@ class Solution {
         int[] freqMap = new int[ASCII_SIZE];
         int count = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            char curr = s.charAt(i);
-            freqMap[curr] += 1;
-            if (freqMap[curr] % 2 == 0)
+        for (int i = 0; i < s.length(); i++)
+            if (++freqMap[s.chatAt(i)] % 2 == 0)
                 count += 2;
-        }
 
         return count + (count < s.length() ? 1 : 0);
     }

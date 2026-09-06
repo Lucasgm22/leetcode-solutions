@@ -48,7 +48,7 @@ class Solution {
         int count = 0;
 
         for (int i = 0; i < s.length(); i++)
-            if (++freqMap[s.chatAt(i)] % 2 == 0)
+            if (++freqMap[s.charAt(i)] % 2 == 0)
                 count += 2;
 
         return count + (count < s.length() ? 1 : 0);

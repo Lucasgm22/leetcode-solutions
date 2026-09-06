@@ -50,10 +50,8 @@ class Solution {
         for (int i = 0; i < s.length(); i++) {
             char curr = s.charAt(i);
             freqMap[curr] += 1;
-            if (freqMap[curr] == 2) {
+            if (freqMap[curr] % 2 == 0)
                 count += 2;
-                freqMap[curr] = 0;
-            }
         }
 
         return count + (count < s.length() ? 1 : 0);

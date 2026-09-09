@@ -39,22 +39,18 @@ class Solution {
         int j = b.length() - 1;
         int carry = 0;
 
-        StringBuilder ansBuilder = new StringBuilder();
-        while (i >= 0 || j>= 0 || carry == 1) {
-            int sum = carry;
+        StringBuilder sb = new StringBuilder();
 
-            if (i >= 0) {
-                sum += a.charAt(i) - '0';
-                i--;
-            }
+        while (i >= 0 || j >= 0 || carry == 1) {
+            int curDigit = 0;
+            if (i >= 0) curDigit += a.charAt(i--) - '0';
+            if (j >= 0) curDigit += b.charAt(j--) - '0';
+            if (carry == 1) curDigit += carry;
 
-            if (j >= 0) {
-                sum += b.charAt(j) - '0';
-                j--;
-            }
-            ansBuilder.append(sum % 2);
-            carry = sum >> 1;
+            // curDigit is one of 00, 01, 10 , 11 in base 2
+            sb.append(curDigit % 2);
+            carry = curDigit >> 1;
         }
-        return ansBuilder.reverse().toString();
+        return sb.reverse().toString();
     }
 }

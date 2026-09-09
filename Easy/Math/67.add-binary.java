@@ -42,11 +42,9 @@ class Solution {
         StringBuilder sb = new StringBuilder();
 
         while (i >= 0 || j >= 0 || carry == 1) {
-            int curDigit = 0;
+            int curDigit = carry;
             if (i >= 0) curDigit += a.charAt(i--) - '0';
             if (j >= 0) curDigit += b.charAt(j--) - '0';
-            if (carry == 1) curDigit += carry;
-
             // curDigit is one of 00, 01, 10 , 11 in base 2
             sb.append(curDigit % 2);
             carry = curDigit >> 1;

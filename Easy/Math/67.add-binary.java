@@ -39,16 +39,19 @@ class Solution {
         int j = b.length() - 1;
         int carry = 0;
 
-        StringBuilder sb = new StringBuilder();
+        int ansLength = Math.max(a.length(), b.length()) + 1;
+        char[] ansCharArray = new char[ansLength];
+        int k = ansLength - 1;
 
         while (i >= 0 || j >= 0 || carry == 1) {
             int curDigit = carry;
             if (i >= 0) curDigit += a.charAt(i--) - '0';
             if (j >= 0) curDigit += b.charAt(j--) - '0';
             // curDigit is one of 00, 01, 10 , 11 in base 2
-            sb.append(curDigit % 2);
+            ansCharArray[k--] = (char) (curDigit % 2 + '0');
             carry = curDigit >> 1;
         }
-        return sb.reverse().toString();
+        return ansCharArray[0] != '\u0000' ? new String(ansCharArray)
+                                           : new String(ansCharArray, 1, ansLength - 1);
     }
 }

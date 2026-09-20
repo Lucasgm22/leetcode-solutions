@@ -57,15 +57,11 @@ class Solution {
         if (n == 0)
             return new int[] { 0 };
 
-        if (n == 1)
-            return new int[] { 0, 1 };
-
 
         int[] ans = new int[n+1];
         ans[0] = 0;
-        ans[1] = 1;
 
-        for (int i = 2; i <= n; i++)
+        for (int i = 1; i <= n; i++)
             ans[i] = ans[(i >> 1)] + ((i % 2) == 1 ? 1 : 0);
 
         return ans;

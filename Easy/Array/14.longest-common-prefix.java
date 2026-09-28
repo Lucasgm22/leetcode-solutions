@@ -40,21 +40,13 @@
 
 class Solution {
     public String longestCommonPrefix(String[] strs) {
-        StringBuilder sb = new StringBuilder();
-        int i = 0;
-        boolean isCommonPrefix = true;
+        if (strs.length == 1) return strs[0];
 
-        while (isCommonPrefix) {
-            for (String str: strs) {
-                if (i >= str.length() || str.charAt(i) != strs[0].charAt(i)) {
-                    isCommonPrefix = false;
-                    break;
-                }
-            }
-            if (isCommonPrefix)
-                sb.append(strs[0].charAt(i++));
-        }
+        for (int i = 0; i < strs[0].length(); i++)
+            for (int j = 1; j < strs.length; j++)
+                if (i >= strs[j].length() || strs[j].charAt(i) != strs[0].charAt(i))
+                    return strs[0].substring(0, i);
 
-        return sb.toString();
+        return strs[0];
     }
 }

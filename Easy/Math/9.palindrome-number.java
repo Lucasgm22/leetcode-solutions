@@ -38,6 +38,7 @@
  * 	• -2^31 <= x <= 2^31 - 1
  *
  *
+ * O(1) in space and time
  *
  * Follow up: Could you solve it without converting the integer to a
  * string?

@@ -58,23 +58,15 @@
  */
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        if (root == null) {
+        if (root == null)
             return subRoot == null;
-        }
-
-        return isIdentical(root, subRoot)
-            || isSubtree(root.left, subRoot)
-            || isSubtree(root.right, subRoot);
+        return isIdentical(root, subRoot) || isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
-    private boolean isIdentical(TreeNode t1, TreeNode t2) {
-        if (t1 == null || t2 == null) {
+    public boolean isIdentical(TreeNode t1, TreeNode t2) {
+        if (t1 == null || t2 == null)
             return t1 == t2;
-        }
-
-        return t1.val == t2.val
-            && isIdentical(t1.left, t2.left)
-            && isIdentical(t1.right, t2.right);
+        return t1.val == t2.val && isIdentical(t1.left, t2.left) && isIdentical(t1.right, t2.right);
     }
 }
 

@@ -75,7 +75,10 @@ Constraints:
 O(n * m) in space and time
 """
 
+DIRECTIONS = [[-1, 0], [0, 1], [1, 0], [0, -1]]
+
 class Solution:
+
     def floodFill(self, image: list[list[int]], sr: int, sc: int, color: int) -> list[list[int]]:
         if image[sr][sc] == color:
             return image
@@ -85,9 +88,8 @@ class Solution:
 
         curColor = image[sr][sc]
         image[sr][sc] = color
-        directions = [[-1, 0], [0, 1], [1, 0], [0, -1]]
 
-        for direction in directions:
+        for direction in DIRECTIONS:
             adjR = sr + direction[0]
             adjC = sc + direction[1]
             if self.isInBounds(adjR, adjC, m, n) and image[adjR][adjC] == curColor:

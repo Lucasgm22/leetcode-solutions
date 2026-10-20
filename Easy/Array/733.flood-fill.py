@@ -74,8 +74,11 @@ Constraints:
 	• 0 <= sc < n
 O(n * m) in space and time
 """
-
-DIRECTIONS = [[-1, 0], [0, 1], [1, 0], [0, -1]]
+UP = [-1, 0]
+RIGHT = [0, 1]
+DOWN = [1, 0]
+LEFT = [0, -1]
+DIRECTIONS = [UP, RIGHT, DOWN, LEFT]
 
 class Solution:
 
